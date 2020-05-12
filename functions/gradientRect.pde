@@ -8,10 +8,10 @@
 // red, green, blue: "central" colour around which the gradient will be based
 // cVar: how much the red, green and blue colours are allowed to vary from the "central" colour
 // noiseRStart, noiseGStart, noiseBStart: starting points of perlin noise
-void gradientRect(int xLocation, int yLocation, int rectWidth, int rectHeight, float noiseScale, int red, int green, int blue, float cVar, float noiseRStart, float noiseGStart, float noiseBStart) {
+void gradientRect(float xLocation, float yLocation, float rectWidth, float rectHeight, float noiseScale, float red, float green, float blue, float cVar, float noiseRStart, float noiseGStart, float noiseBStart) {
   // looping through x and y
-  for (int x = xLocation; x < (xLocation + rectWidth); x += 1) {
-    for (int y = yLocation; y < (yLocation + rectHeight); y += 1) {
+  for (float x = xLocation; x < (xLocation + rectWidth); x += 1) {
+    for (float y = yLocation; y < (yLocation + rectHeight); y += 1) {
       // now affecting colour based on noise of x and y
       float rNoise = noise((x*noiseScale)+noiseRStart, (y*noiseScale)+noiseRStart);
       float gNoise = noise((x*noiseScale)+noiseGStart, (y*noiseScale)+noiseGStart);
