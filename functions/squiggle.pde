@@ -46,9 +46,9 @@ void squiggle(
   for (int i = 0; i < iStop; i++) {
 
     float noiseMovement = map(noise(positionNoiseCount), 0, 1, -movementWack, movementWack);
-    float noiseSize = map(noise(thicknessNoiseCount), 0, 1, 1 - thicknessWack, 1 + thicknessWack);
+    float noiseSize = map(noise(thicknessNoiseCount), 0, 1, -thicknessWack, thicknessWack);
 
-    circle(x+noiseMovement,y+noiseMovement, thickness*noiseSize);
+    circle(x+noiseMovement,y+noiseMovement, thickness+noiseSize);
 
     positionNoiseCount += movementScale;
     thicknessNoiseCount += thicknessScale;
