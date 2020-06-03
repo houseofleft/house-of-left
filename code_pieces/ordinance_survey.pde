@@ -1,5 +1,5 @@
 void setup() {
-  size(600,600);
+  size(1000,1000);
   frameRate(0.2);
 }
 
@@ -10,7 +10,8 @@ void draw() {
   float noiseStartX = random(7);
   float noiseStartY = random(7);
 
-  float noiseScale = 0.002;
+  float noiseScale = 0.001;
+
 
   float[] backgroundColour = {228, 220, 190};
   float[] highlightColour = {252, 207, 138};
@@ -20,8 +21,6 @@ void draw() {
   float[] lightBlue = {215, 231, 250};
   float[] pink = {207, 44, 111};
 
-  // background
-  contour(backgroundColour, navy, noiseScale, 0, 0, 0, 1, "nada");
 
   // contouring
   for (int i = 0; i < 10; i++) {
@@ -55,8 +54,7 @@ void contour(float[] backgroundColour, float[] foregroundColour, float noiseScal
       float pointNoise = noise((x * noiseScaleShape) + noiseStartX, (y * noiseScaleShape) + noiseStartY);
       if ( (pointNoise > lowerEdge) && (pointNoise <= upperEdge)) {
         // first drawing the background
-        float change = random(-10, 10);
-        stroke(backgroundColour[0] + change, backgroundColour[1] + change, backgroundColour[2] + change);
+        stroke(backgroundColour[0], backgroundColour[1], backgroundColour[2]);
         point(x, y);
         // now the foreground
         if (vibe == "stripes") {
@@ -69,12 +67,12 @@ void contour(float[] backgroundColour, float[] foregroundColour, float noiseScal
           if ((x % 10 == 0) && (y % 10 == 0)) {
             noStroke();
             fill(foregroundColour[0], foregroundColour[1], foregroundColour[2]);
-            circle(x, y, 3);
+            circle(x, y, 5);
           }
         }
         else if (vibe == "outline") {
           fill(foregroundColour[0], foregroundColour[1], foregroundColour[2]);
-          circle(x, y, 3);
+          circle(x, y, 5);
         }
       }
     }
