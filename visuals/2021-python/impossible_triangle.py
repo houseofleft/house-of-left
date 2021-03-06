@@ -1,22 +1,91 @@
 import shades
 
-canvas = shades.Canvas(1024, 929)
+canvas = shades.Canvas(1000, 907)
 
-one = shades.BlockColor((200, 200, 200))
-two = shades.BlockColor((100, 100, 100))
-three = shades.BlockColor((150, 150, 150))
+def units(n):
+    return n * (canvas.width / 205)
 
-unit = canvas.width / 10
+central_color = (200, 200, 200)
 
-one.shape()
+one = shades.NoiseGradient(
+    color=central_color,
+    noise_fields=[shades.NoiseField(scale=0.001) for i in range(3)]
+)
+
+two = shades.NoiseGradient(
+    color=central_color,
+    noise_fields=[shades.NoiseField(scale=0.001) for i in range(3)]
+)
+
+three = shades.NoiseGradient(
+    color=central_color,
+    noise_fields=[shades.NoiseField(scale=0.001) for i in range(3)]
+)
+
+fill = shades.NoiseGradient(
+    color=central_color,
+    noise_fields=[shades.NoiseField(scale=0.001) for i in range(3)]
+)
+
+fill.fill(canvas)
+
+one.shape(
     canvas,
     [
-        (425, 0),
-        (580, 0),
-        (1020, 780),
-        (315, 780),
-        (390, 645),
-        (785, 650)
+        (units(87), units(1)),
+        (units(116), units(1)),
+        (units(204), units(156)),
+        (units(157), units(129)),
+    ]
+)
+
+one.shape(
+    canvas,
+    [
+        (units(63), units(156)),
+        (units(78), units(129)),
+        (units(157), units(129)),
+        (units(204), units(156)),
+    ]
+)
+
+two.shape(
+    canvas,
+    [
+        (units(103), units(85)),
+        (units(87), units(56)),
+        (units(16), units(185)),
+        (units(63), units(156)),
+    ]
+)
+
+two.shape(
+    canvas,
+    [
+        (units(16), units(185)),
+        (units(190), units(185)),
+        (units(204), units(156)),
+        (units(63), units(156)),
+    ]
+)
+
+three.shape(
+    canvas,
+    [
+        (units(16), units(185)),
+        (units(1), units(156)),
+        (units(87), units(1)),
+        (units(87), units(56)),
+    ]
+)
+
+three.shape(
+    canvas,
+    [
+        (units(87), units(1)),
+        (units(158), units(129)),
+        (units(126), units(129)),
+        (units(87), units(56)),
     ]
 )
 
