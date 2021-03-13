@@ -1,9 +1,9 @@
 import shades
 from random import choice, randint
 
-canvas = shades.Canvas(color=(249, 241, 228))
+canvas = shades.Canvas(800, 500, color=(249, 241, 228))
 ink = shades.BlockColor()
-units = randint(1,6) * 25
+units = 50
 
 def pick_colour():
   colours = [

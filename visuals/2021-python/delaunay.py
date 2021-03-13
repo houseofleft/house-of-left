@@ -20,7 +20,7 @@ points.append((canvas.width/2, canvas.height))
 
 # drawing triangles between points
 for tri in Delaunay(points).simplices:
-    ink.color = [randint(180, 255) for i in range(3)]
+    ink.color = [randint(130, 190), randint(160,200), randint(200,250)]
     ink.triangle(
         canvas,
         points[tri[0]],
