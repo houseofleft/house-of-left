@@ -7,7 +7,6 @@ ink = shades.NoiseGradient(
     noise_fields=[shades.NoiseField(scale=0.002) for i in range(3)],
     color=(100,150,200)
 )
-block = shades.BlockColor((250,250,250))
 
 points = [(randint(50, canvas.width-50), randint(50, canvas.height-50)) for i in range(2000)]
 # plus some edge points to make sure the whole canvas is coloured
@@ -17,10 +16,9 @@ points += [(randint(50, canvas.width-50), canvas.height-50) for i in range(10)]
 points += [(canvas.width-50, randint(50, canvas.height-50)) for i in range(10)]
 points += [(50, 50), (50, canvas.height-50), (canvas.width-50, 50), (canvas.width-50, canvas.height-50)]
 
-ink.fill(canvas)
 # drawing triangles between points
 for tri in Delaunay(points).simplices:
-    block.triangle_outline(
+    ink.triangle_outline(
         canvas,
         points[tri[0]],
         points[tri[1]],
