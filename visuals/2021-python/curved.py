@@ -12,11 +12,12 @@ class noise(shades.Shade):
 
 canvas = shades.Canvas(1200, 1200)
 colors = [(0, 43, 89), (249, 223, 29), (84, 145, 150), (173, 176, 163), (72, 172, 157), (50, 111, 164), (171, 190, 208), (159, 132, 63), (83, 127, 177)]
+colors = colors[:3]
 inks = []
 
 for c in colors:
     ink = noise(c, warp_noise=[shades.NoiseField(scale=0.001) for i in range(2)])
-    ink.rand_range = [random.uniform(0, 0.8), 1]
+    ink.rand_range = [random.uniform(0, 0.4), 1]
     inks.append(ink)
 
 random.shuffle(inks)
