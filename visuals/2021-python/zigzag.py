@@ -3,7 +3,7 @@ import random
 
 canvas = shades.Canvas(1000, 1000)
 ink = shades.NoiseGradient(
-    color=(200,200,200),
+    color=(0, 20, 160),
     noise_fields=[shades.NoiseField(scale=0.002) for i in range(3)],
     warp_size=500,
     warp_noise=[shades.NoiseField(scale=0.01), shades.NoiseField(scale=0.01)])
