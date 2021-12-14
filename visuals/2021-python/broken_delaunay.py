@@ -8,7 +8,8 @@ ink = shades.NoiseGradient(
 )
 
 points = [
-    (randint(-canvas.width, canvas.width*2), randint(-canvas.height, canvas.height*2)) for i in range(70)]
+ (randint(-canvas.width, canvas.width*2),
+     randint(-canvas.height, canvas.height*2)) for i in range(70)]
 
 # drawing triangles between points
 for tri in Delaunay(points).simplices:

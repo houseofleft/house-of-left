@@ -8,10 +8,12 @@ ink = shades.NoiseGradient(
     warp_size=500,
     warp_noise=[shades.NoiseField(scale=0.01), shades.NoiseField(scale=0.01)])
 
+
 def random_point():
     x = random.randint(0, canvas.width)
     y = random.randint(0, canvas.height)
     return (x, y)
+
 
 points = [random_point() for i in range(1000)]
 for i in range(len(points)-1):
