@@ -3,11 +3,12 @@ import random
 
 canvas = shades.Canvas(1000, 1000)
 ink = shades.NoiseGradient(
-    color=(150, 150, 150),
+    color=(200, 200, 200),
     noise_fields=[shades.NoiseField(scale=0.001) for i in range(3)],
+    noise_fields=noise_fields(scale=0.06, limit=2000, buffer=1000, channels=3),
     color_variance=70,
     warp_size=800,
-    warp_noise=[shades.NoiseField(scale=0.005), shades.NoiseField(scale=0.005)],
+    warp_noise=noise_fields(scale=0.5, limit=2000, buffer=1000, channels=2),
 )
 
 

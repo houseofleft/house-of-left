@@ -5,7 +5,7 @@ canvas = shades.Canvas(1000, 1000)
 ink = shades.BlockColor()
 
 margin = 0
-grid_size = 200
+grid_size = random.choice([100, 200, 500])
 
 colors = [
     (13, 59, 102),
@@ -14,6 +14,8 @@ colors = [
     (238, 150, 75),
     (249, 87, 56),
 ]
+colors = random.sample(colors, random.randint(2, len(colors)))
+
 
 def quarter_circle(x, y):
     # draw background
@@ -24,7 +26,7 @@ def quarter_circle(x, y):
     if placement == 'top_left':
         ink.pizza_slice(canvas, (x, y), grid_size, 90, 90)
     elif placement == 'bottom_left':
-        ink.pizza_slice(canvas, (x, y + grid_size), grid_size, 0, 90)
+        ink.pizza_slice(canvas, (x, y + grid_size), grid_size, 359, 92)
     elif placement == 'top_right':
         ink.pizza_slice(canvas, (x + grid_size, y), grid_size, 180, 90)
     elif placement == 'bottom_left':
