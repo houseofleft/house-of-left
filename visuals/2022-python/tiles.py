@@ -24,13 +24,13 @@ def quarter_circle(x, y):
     ink.color = random.choice(colors)
     placement = random.choice(['top_left', 'bottom_left', 'top_right', 'bottom_left'])
     if placement == 'top_left':
-        ink.pizza_slice(canvas, (x, y), grid_size, 90, 90)
+        ink.circle_slice(canvas, (x, y), grid_size, 90, 90)
     elif placement == 'bottom_left':
-        ink.pizza_slice(canvas, (x, y + grid_size), grid_size, 359, 92)
+        ink.circle_slice(canvas, (x, y + grid_size), grid_size, 359, 92)
     elif placement == 'top_right':
-        ink.pizza_slice(canvas, (x + grid_size, y), grid_size, 180, 90)
+        ink.circle_slice(canvas, (x + grid_size, y), grid_size, 180, 90)
     elif placement == 'bottom_left':
-        ink.pizza_slice(canvas, (x + grid_size, y + grid_size), grid_size, 270, 90)
+        ink.circle_slice(canvas, (x + grid_size, y + grid_size), grid_size, 270, 90)
 
 
 def triangle(x, y):

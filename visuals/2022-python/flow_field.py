@@ -1,34 +1,16 @@
 import shades
 import random
+from handy_stuff import palletes
 
-canvas = shades.Canvas(1000, 1000)
+pallete = random.choice(palletes)
+canvas = shades.Canvas(2000, 2000, random.choice(pallete))
 x_field = shades.NoiseField(
-    scale=random.uniform(0.3, 0.8),
-    buffer=1500,
-    limit=3000,
+    scale=random.uniform(0.003, 0.008),
 )
 y_field = shades.NoiseField(
-    scale=random.uniform(0.3, 0.8),
-    buffer=1500,
-    limit=3000,
+    scale=random.uniform(0.003, 0.008),
 )
-gradient = shades.NoiseGradient(
-    color=(200, 200, 200),
-    noise_fields=shades.noise_fields(
-        scale=random.uniform(0.1, 0.4),
-        buffer=1500,
-        limit=3000,
-        channels=3,
-    ),
-)
-ink = shades.BlockColor(
-    warp_noise=shades.noise_fields(
-        scale=0,
-        buffer=1500,
-        limit=3000,
-        channels=2,
-    ),
-)
+ink = shades.BlockColor()
 
 
 class Walker():
@@ -37,13 +19,10 @@ class Walker():
     Takes xy coord as sole initialisation argument
     """
 
-    def __init__(self, xy):
+    def __init__(self, xy, color=(60, 140, 180)):
         self.affect = 10
         self.xy = xy
-        ink.color = gradient.determine_shade((
-            int(self.xy[0]),
-            int(self.xy[1]),
-        ))
+        ink.color = color
 
     def draw(self):
         ink.point(canvas, (int(self.xy[0]), int(self.xy[1])))
@@ -67,16 +46,14 @@ class Walker():
 
 
 def random_start():
-    x = random.randint(-1500, canvas.width)
-    y = random.randint(-1500, canvas.height)
+    x = random.randint(-500, canvas.width)
+    y = random.randint(-500, canvas.height)
     return x, y
 
 
-ink.color = gradient.determine_shade(canvas.random_point())
-ink.fill(canvas)
+for i in range(0, 5000):
+    walker = Walker(random_start(), random.choice(pallete))
+    [walker.update() for i in range(400)]
 
-for i in range(0, 7000):
-    walker = Walker(random_start())
-    [walker.update() for i in range(700)]
 
 canvas.show()
