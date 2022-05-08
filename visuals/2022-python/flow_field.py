@@ -3,7 +3,7 @@ import random
 from handy_stuff import palletes
 
 pallete = random.choice(palletes)
-canvas = shades.Canvas(2000, 2000, random.choice(pallete))
+canvas = shades.Canvas(3000, 4000, random.choice(pallete))
 x_field = shades.NoiseField(
     scale=random.uniform(0.003, 0.008),
 )
@@ -51,7 +51,7 @@ def random_start():
     return x, y
 
 
-for i in range(0, 5000):
+for i in range(0, 9000):
     walker = Walker(random_start(), random.choice(pallete))
     [walker.update() for i in range(400)]
 
