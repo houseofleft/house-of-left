@@ -12,18 +12,9 @@ In this repo, you'll find works in progress under "sketches" (stuff in here migh
 
 This readme is also a self-generating gallery of outputs from everything in the pieces folder. The pieces here will be different each time the readme file is generated.
 
+{% for image in images %}
 
+### {{ image.rsplit('/', 1)[-1].replace('.png', '') }}
+![auto-generated image for below title]({{ image }})
 
-### the_bay
-![auto-generated image for below title](gallery/the_bay.png)
-
-
-
-### swimming_pools
-![auto-generated image for below title](gallery/swimming_pools.png)
-
-
-
-### take_the_a_train
-![auto-generated image for below title](gallery/take_the_a_train.png)
-
+{% endfor %}
