@@ -15,15 +15,15 @@ This readme is also a self-generating gallery of outputs from everything in the 
 
 
 ### the_bay
-[!(./gallery/gallery/the_bay.png)]
+![auto-generated image for below title]`(gallery/the_bay.png)
 
 
 
 ### swimming_pools
-[!(./gallery/gallery/swimming_pools.png)]
+![auto-generated image for below title]`(gallery/swimming_pools.png)
 
 
 
 ### take_the_a_train
-[!(./gallery/gallery/take_the_a_train.png)]
+![auto-generated image for below title]`(gallery/take_the_a_train.png)
 

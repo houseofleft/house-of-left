@@ -20,8 +20,6 @@ for piece in pieces:
 
 print('gallery images created')
 
-image_files = glob.glob('gallery/*.png')
-
 env = Environment(
     loader=FileSystemLoader('.')
 )
