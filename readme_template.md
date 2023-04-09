@@ -14,7 +14,7 @@ This readme is also a self-generating gallery of outputs from everything in the 
 
 {% for image in images %}
 
-### {{ image.rsplit('/', 1)[-1].replace('.png', '') }}
+### {{ image.rsplit('/', 1)[-1].replace('.png', '').replace('_', ' ') }}
 ![auto-generated image for below title]({{ image }})
 
 {% endfor %}

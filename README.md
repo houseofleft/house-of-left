@@ -14,16 +14,21 @@ This readme is also a self-generating gallery of outputs from everything in the 
 
 
 
-### the_bay
+### the bay
 ![auto-generated image for below title](gallery/the_bay.png)
 
 
 
-### swimming_pools
+### swimming pools
 ![auto-generated image for below title](gallery/swimming_pools.png)
 
 
 
-### take_the_a_train
+### riley
+![auto-generated image for below title](gallery/riley.png)
+
+
+
+### take the a train
 ![auto-generated image for below title](gallery/take_the_a_train.png)
 
